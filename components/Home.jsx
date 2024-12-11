@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <section id="home">
       <div className="container flex flex-col items-center gap-10 md:flex-row">
-        <div className="mx-auto md:basis-1/2 lg:basis-2/5">
+        <div className="mx-auto md:basis-1/2 lg:basis-2/5 animate-movingY">
           <Image src={homeImage}
            alt="HOMEIMAGE"
             width={240}
