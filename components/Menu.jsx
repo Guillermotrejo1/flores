@@ -1,6 +1,7 @@
 import { useState } from "react";
-import MenuCard from "./MenuCard"
-
+import Burgers from "./Burgers"
+import Snacks from "./Snacks"
+import Beverages from "./Beverages"
 
 const Menu = () => {
   const [isAllActive, setIsAllActive] = useState(true);
@@ -71,7 +72,13 @@ const Menu = () => {
             </ul>
           </div>
         </div>
-       <MenuCard />
+       <div>
+       <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+        <Burgers />
+        <Snacks />
+        <Beverages />
+        </ul>
+       </div>
       </div>
     </section>
   );
