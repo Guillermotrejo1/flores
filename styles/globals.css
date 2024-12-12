@@ -45,4 +45,5 @@
   .paragraph {
     @apply text-paragraphColor text-xs leading-5;
   }
+  
 }

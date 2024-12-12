@@ -1,9 +1,10 @@
 import { useState } from "react";
-import Burgers from "./Burgers"
-import Snacks from "./Snacks"
-import Beverages from "./Beverages"
+import Burgers from "./Burgers";
+import Snacks from "./Snacks";
+import Beverages from "./Beverages";
 
 const Menu = () => {
+  const [filterCategory, setFilterCategory] = useState("all");
   const [isAllActive, setIsAllActive] = useState(true);
   const [isFoodActive, setIsFoodActive] = useState(false);
   const [isSnackActive, setIsSnackActive] = useState(false);
@@ -64,6 +65,7 @@ const Menu = () => {
                         btn.setIsActive(false);
                       }
                     });
+                    setFilterCategory(button.value);
                   }}
                 >
                   {button.label}
@@ -72,13 +74,20 @@ const Menu = () => {
             </ul>
           </div>
         </div>
-       <div>
-       <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
-        <Burgers />
-        <Snacks />
-        <Beverages />
-        </ul>
-       </div>
+        <div>
+          <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+            {[
+              { category: "food", component: <Burgers /> },
+              { category: "snack", component: <Snacks /> },
+              { category: "beverage", component: <Beverages /> },
+            ]
+              .filter(
+                (item) =>
+                  filterCategory === "all" || filterCategory === item.category
+              )
+              .map((item) => item.component)}
+          </ul>
+        </div>
       </div>
     </section>
   );
