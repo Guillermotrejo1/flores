@@ -3,6 +3,7 @@ import Hero from "../components/Home.jsx"
 import Category from "../components/Category.jsx"
 import Promo from "../components/Promo.jsx"
 import About from "../components/About.jsx"
+import Menu from "../components/Menu.jsx"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Category />
       <Promo />
       <About />
+      <Menu />
     </main>
     </>
   );
