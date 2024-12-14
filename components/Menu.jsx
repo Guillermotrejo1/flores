@@ -38,7 +38,7 @@ const Menu = () => {
   ];
 
   return (
-    <section>
+    <section id="menu">
       <div className="container">
         <div className="max-w-md mx-auto text-center">
           <h2 className="section__title">OUR BEST MENU</h2>
