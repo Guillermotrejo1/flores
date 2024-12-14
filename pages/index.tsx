@@ -5,6 +5,7 @@ import Promo from "../components/Promo.jsx"
 import About from "../components/About.jsx"
 import Menu from "../components/Menu.jsx"
 import Review from "../components/Review.jsx"
+import Contact from "../components/Contact.jsx"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <About />
       <Menu />
       <Review />
+      <Contact />
     </main>
     </>
   );
