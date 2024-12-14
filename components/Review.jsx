@@ -4,12 +4,20 @@ import { useEffect } from "react";
 const Review = () => {
     useEffect(() => {
         const swiper = new window.Swiper(".swiper", {
+        speed: 400,
+        spaceBetween: 50,
+        autoplay: {
+        },
         direction: "horizontal",
         loop: true,
         pagination: {
         el: ".swiper-pagination",
         clickable: true,
         },
+        breakpoints: {
+            1024: {slidesPerView: 2,
+            }
+        }
         });
         swiper.init();
         }, []);
