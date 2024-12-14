@@ -2,16 +2,17 @@ import ReviewCard from "./ReviewCard";
 import { useEffect } from "react";
 
 const Review = () => {
-  useEffect(() => {
-    const swiper = new window.Swiper(".swiper", {
-      direction: "horizontal",
-      loop: true,
-      pagination: {
+    useEffect(() => {
+        const swiper = new window.Swiper(".swiper", {
+        direction: "horizontal",
+        loop: true,
+        pagination: {
         el: ".swiper-pagination",
         clickable: true,
-      },
-    });
-  }, []);
+        },
+        });
+        swiper.init();
+        }, []);
 
   return (
     <section id="review" className="bg-primaryColorLight py-20">
