@@ -7,6 +7,7 @@ import Menu from "../components/Menu.jsx"
 import Review from "../components/Review.jsx"
 import Contact from "../components/Contact.jsx"
 import Footer  from "../components/Footer.jsx"
+import ScrollUpBtn from "../components/ScrollUpBtn.jsx"
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Review />
       <Contact />
       <Footer />
+      <ScrollUpBtn />
     </main>
     </>
   );

@@ -1,13 +1,35 @@
+import { useEffect, useState } from "react";
 import Nav from "../components/Nav.jsx"
 
 
 const Header = () => {
-  return (
-    <header className="bg-primaryColor fixed top-0 left-0 w-full z-50">
-    <Nav />
+  const ScrollHeader = () => {
+    const [showBorder, setShowBorder] = useState(false);
 
-    </header>
-  )
-}
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY >= 50) {
+          setShowBorder(true);
+        } else {
+          setShowBorder(false);
+        }
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
-export default Header
+    return (
+      <header
+        className={`bg-primaryColor fixed top-0 left-0 w-full z-50 ${
+          showBorder ? "border-b border-secondaryColor" : ""
+        }`}
+      >
+        <Nav />
+      </header>
+    );
+  };
+
+  return <ScrollHeader />;
+};
+
+export default Header;
