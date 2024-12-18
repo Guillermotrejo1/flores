@@ -68,7 +68,7 @@ const Footer = () => {
           </li>
         </ul>
 
-        <div className="flex flex-col items-center border-t border-primaryColorLight py-5 md:flex-row md:justify-between">
+        <div className="flex flex-col items-center border-t border-primaryColorLight py-5 md:flex-row md:justify-between dark:border-darkColorLight">
             <p className="paragraph">Burger Template kit by Light Code</p>
             <p className="paragraph">Copyright © 2024. All rights reserved.</p>
         </div>

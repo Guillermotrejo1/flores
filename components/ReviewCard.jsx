@@ -5,7 +5,7 @@ import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 const ReviewCard = ({ imageSrc, name, occupation, review }) => {
   return (
     <li className="swiper-slide">
-      <div className="flex flex-col gap-5 bg-primaryColor rounded-lg p-6">
+      <div className="flex flex-col gap-5 bg-primaryColor rounded-lg p-6 dark:bg-darkColor">
         <p className="paragraph">{review}</p>
         <div className="flex items-center">
           <Image

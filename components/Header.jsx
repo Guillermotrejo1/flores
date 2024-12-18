@@ -20,7 +20,7 @@ const Header = () => {
 
     return (
       <header
-        className={`bg-primaryColor fixed top-0 left-0 w-full z-50 ${
+        className={`bg-primaryColor dark:bg-darkColor fixed top-0 left-0 w-full z-50 ${
           showBorder ? "border-b border-secondaryColor" : ""
         }`}
       >

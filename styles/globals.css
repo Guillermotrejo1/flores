@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply text-whiteColor bg-primaryColor tracking-wider font-dmsans;
+    @apply text-whiteColor bg-primaryColor tracking-wider font-dmsans dark:bg-darkColor;
   }
 
   section {

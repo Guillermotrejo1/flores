@@ -52,7 +52,7 @@ const Menu = () => {
               {buttons.map((button) => (
                 <li
                   key={button.value}
-                  className={`btn hover:bg-secondaryColor ${
+                  className={`btn hover:bg-secondaryColor dark:bg-darkColorLight dark:hover:bg-secondaryColor  ${
                     button.isActive
                       ? "bg-secondaryColor"
                       : "bg-primaryColorLight"

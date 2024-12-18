@@ -13,7 +13,7 @@ const Burgers = () => {
           <div
             className="h-56 grid place-items-center bg-primaryColorLight
               rounded-3xl hover:bg-secondaryColor ease-linear duration-200
-              lg:h-40"
+              lg:h-40 dark:bg-darkColorLight"
           >
             <Image
               src={Burger1}
@@ -39,7 +39,7 @@ const Burgers = () => {
           <div
             className="h-56 grid place-items-center bg-primaryColorLight
               rounded-3xl hover:bg-secondaryColor ease-linear duration-200
-              lg:h-40"
+              lg:h-40 dark:bg-darkColorLight"
           >
             <Image
               src={Burger2}
@@ -65,7 +65,7 @@ const Burgers = () => {
           <div
             className="h-56 grid place-items-center bg-primaryColorLight
               rounded-3xl hover:bg-secondaryColor ease-linear duration-200
-              lg:h-40"
+              lg:h-40 dark:bg-darkColorLight"
           >
             <Image
               src={Burger3}
@@ -91,7 +91,7 @@ const Burgers = () => {
           <div
             className="h-56 grid place-items-center bg-primaryColorLight
               rounded-3xl hover:bg-secondaryColor ease-linear duration-200
-              lg:h-40"
+              lg:h-40 dark:bg-darkColorLight"
           >
             <Image
               src={Burger4}
@@ -117,7 +117,7 @@ const Burgers = () => {
           <div
             className="h-56 grid place-items-center bg-primaryColorLight
               rounded-3xl hover:bg-secondaryColor ease-linear duration-200
-              lg:h-40"
+              lg:h-40 dark:bg-darkColorLight"
           >
             <Image
               src={Burger5}

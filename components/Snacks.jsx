@@ -14,7 +14,7 @@ const Snacks = () => {
           <div
             className="h-56 grid place-items-center bg-primaryColorLight
               rounded-3xl hover:bg-secondaryColor ease-linear duration-200
-              lg:h-40"
+              lg:h-40 dark:bg-darkColorLight"
           >
             <Image
               src={Snack1}
@@ -40,7 +40,7 @@ const Snacks = () => {
           <div
             className="h-56 grid place-items-center bg-primaryColorLight
               rounded-3xl hover:bg-secondaryColor ease-linear duration-200
-              lg:h-40"
+              lg:h-40 dark:bg-darkColorLight"
           >
             <Image
               src={Snack2}
@@ -66,7 +66,7 @@ const Snacks = () => {
           <div
             className="h-56 grid place-items-center bg-primaryColorLight
               rounded-3xl hover:bg-secondaryColor ease-linear duration-200
-              lg:h-40"
+              lg:h-40 dark:bg-darkColorLight"
           >
             <Image
               src={Snack3}
@@ -92,7 +92,7 @@ const Snacks = () => {
           <div
             className="h-56 grid place-items-center bg-primaryColorLight
               rounded-3xl hover:bg-secondaryColor ease-linear duration-200
-              lg:h-40"
+              lg:h-40 dark:bg-darkColorLight"
           >
             <Image
               src={Snack4}
@@ -118,7 +118,7 @@ const Snacks = () => {
           <div
             className="h-56 grid place-items-center bg-primaryColorLight
               rounded-3xl hover:bg-secondaryColor ease-linear duration-200
-              lg:h-40"
+              lg:h-40 dark:bg-darkColorLight"
           >
             <Image
               src={Snack5}
@@ -144,7 +144,7 @@ const Snacks = () => {
           <div
             className="h-56 grid place-items-center bg-primaryColorLight
               rounded-3xl hover:bg-secondaryColor ease-linear duration-200
-              lg:h-40"
+              lg:h-40 dark:bg-darkColorLight"
           >
             <Image
               src={Snack6}
