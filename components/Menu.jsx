@@ -2,6 +2,7 @@ import { useState } from "react";
 import Burgers from "./Burgers";
 import Snacks from "./Snacks";
 import Beverages from "./Beverages";
+import React from "react";
 
 const Menu = () => {
   const [filterCategory, setFilterCategory] = useState("all");
@@ -39,7 +40,12 @@ const Menu = () => {
 
   return (
     <section id="menu">
-      <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" className="container">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        className="container"
+      >
         <div className="max-w-md mx-auto text-center">
           <h2 className="section__title">OUR BEST MENU</h2>
           <div className="separator mx-auto"></div>
@@ -85,7 +91,9 @@ const Menu = () => {
                 (item) =>
                   filterCategory === "all" || filterCategory === item.category
               )
-              .map((item) => item.component)}
+              .map((item, index) => (
+                <React.Fragment key={index}>{item.component}</React.Fragment>
+              ))}
           </ul>
         </div>
       </div>

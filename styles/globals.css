@@ -25,6 +25,10 @@
   .btn-primary {
     @apply text-black bg-secondaryColor hover:opacity-75
   }
+
+  .no-transition {
+    transition: none !important;
+  }
 }
 
 @layer utilities {
