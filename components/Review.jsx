@@ -24,7 +24,7 @@ const Review = () => {
 
   return (
     <section id="review" className="bg-primaryColorLight py-20 dark:bg-darkColorLight">
-      <div className="container">
+      <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" className="container">
         <div className="max-w-md mx-auto text-center">
           <h2 className="section__title">CUSTOMER REVIEW</h2>
           <div className="separator mx-auto"></div>

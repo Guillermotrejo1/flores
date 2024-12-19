@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Footer = () => {
   return (
     <section className="footer">
-      <div className="container">
+      <div data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200" className="container">
         <ul className="grid grid-cols-1 items-start gap-5 pb-5 mb:grid-cols-2 lg:grid-cols-4">
           <li>
             <div className="space-y-3">

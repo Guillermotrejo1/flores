@@ -1,9 +1,9 @@
-
 import { useState } from "react";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState("light");
+  const [activeLink, setActiveLink] = useState("home");
 
   function toggleMenu() {
     setIsOpen(!isOpen);
@@ -13,6 +13,12 @@ const Nav = () => {
     setTheme(theme === "light" ? "dark" : "light");
     document.body.classList.toggle("dark");
   };
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
+
+  
 
   return (
     <nav className="container relative h-14 flex justify-between items-center dark:bg-darkColor">
@@ -30,7 +36,12 @@ const Nav = () => {
           <li>
             <a
               href="#home"
-              className="hover:text-secondaryColor ease-in duration-200"
+              className={`${
+                activeLink === "home"
+                  ? "text-secondaryColor glow"
+                  : ""
+              } hover:text-secondaryColor ease-in duration-200`}
+              onClick={() => handleLinkClick("home")}
             >
               Home
             </a>
@@ -38,7 +49,12 @@ const Nav = () => {
           <li>
             <a
               href="#about"
-              className="hover:text-secondaryColor ease-in duration-200"
+              className={`${
+                activeLink === "about"
+                  ? "text-secondaryColor glow"
+                  : ""
+              } hover:text-secondaryColor ease-in duration-200`}
+              onClick={() => handleLinkClick("about")}
             >
               About Us
             </a>
@@ -46,7 +62,12 @@ const Nav = () => {
           <li>
             <a
               href="#menu"
-              className="hover:text-secondaryColor ease-in duration-200"
+              className={`${
+                activeLink === "menu"
+                  ? "text-secondaryColor glow"
+                  : ""
+              } hover:text-secondaryColor ease-in duration-200`}
+              onClick={() => handleLinkClick("menu")}
             >
               Menu
             </a>
@@ -54,7 +75,12 @@ const Nav = () => {
           <li>
             <a
               href="#review"
-              className="hover:text-secondaryColor ease-in duration-200"
+              className={`${
+                activeLink === "review"
+                  ? "text-secondaryColor glow"
+                  : ""
+              } hover:text-secondaryColor ease-in duration-200`}
+              onClick={() => handleLinkClick("review")}
             >
               Review
             </a>
@@ -62,7 +88,12 @@ const Nav = () => {
           <li>
             <a
               href="#Contact"
-              className="hover:text-secondaryColor ease-in duration-200"
+              className={`${
+                activeLink === "contact"
+                  ? "text-secondaryColor glow"
+                  : ""
+              } hover:text-secondaryColor ease-in duration-200`}
+              onClick={() => handleLinkClick("contact")}
             >
               Contact
             </a>

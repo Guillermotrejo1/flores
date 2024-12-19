@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUtensils, faDroplet, faLeaf } from '@fortawesome/free-solid-svg-icons'
 
 const Home = () => {
+  
   return (
     <section id="home">
       <div className="container flex flex-col items-center gap-10 md:flex-row">
-        <div className="mx-auto md:basis-1/2 lg:basis-2/5 animate-movingY">
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" className="mx-auto md:basis-1/2 lg:basis-2/5 animate-movingY">
           <Image src={homeImage}
            alt="HOMEIMAGE"
             width={240}
@@ -15,7 +16,8 @@ const Home = () => {
             className="md:w-[300px] lg:w-[400px] h-full object-cover" />
         </div>
 
-        <div className="text-center md:basis-1/2 md:text-start lg:basis-3/5">
+        <div className="text-center md:basis-1/2 md:text-start lg:basis-3/5"
+        data-aos="fade-left">
           <h1 className="home__title">HAPPY TUMMY WITH TASTY BURGERS</h1>
           <div className="separator mx-auto md:mx-0"></div>
           <p className="paragraph">

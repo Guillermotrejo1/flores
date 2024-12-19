@@ -6,7 +6,7 @@ import Beverage2 from "../public/img/beverage-2.png"
 const Card = () => {
   return (
     <>
-      <div className="container flex flex-col gap-5 md:flex-row">
+      <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" className="container flex flex-col gap-5 md:flex-row">
         <div className="bg-secondaryColor flex py-3 rounded-lg overflow-hidden md:flex-1">
           <div className="basis-1/3 relative">
             <Image

@@ -4,7 +4,7 @@ import PromoImg2 from "../public/img/promo-2.png";
 
 const PromoCards = () => {
   return (
-    <div className="container flex flex-col gap-5 lg:gap-10 lg:flex-row">
+    <div className="container flex flex-col gap-5 lg:gap-10 lg:flex-row" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
       <div className="bg-primaryColorLight flex flex-col p-5 rounded-lg
       md:flex-row md:items-center lg:flex-row-reverse lg:flex-1 dark:bg-darkColorLight">
         <Image src={PromoImg1} alt="Promo Image1" className="w-40 mx-auto hover:animate-movingY

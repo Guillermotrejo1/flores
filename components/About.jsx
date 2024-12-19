@@ -6,7 +6,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 const About = () => {
   return (
     <section id="about">
-      <div className="container flex flex-col gap-10 md:flex-row">
+      <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" className="container flex flex-col gap-10 md:flex-row">
         <div className="flex-1">
           <Image src={AboutImg} alt="About Image" className="rounded-lg"/>
         </div>

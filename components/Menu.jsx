@@ -39,7 +39,7 @@ const Menu = () => {
 
   return (
     <section id="menu">
-      <div className="container">
+      <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" className="container">
         <div className="max-w-md mx-auto text-center">
           <h2 className="section__title">OUR BEST MENU</h2>
           <div className="separator mx-auto"></div>
