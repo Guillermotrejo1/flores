@@ -17,6 +17,7 @@ const Nav = () => {
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
+    setIsOpen(false)
   };
 
   useEffect(() => {
