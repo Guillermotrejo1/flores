@@ -3,8 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+  body,
   html {
-    @apply scroll-smooth
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden
+  }
+
+  html {
+    @apply scroll-smooth;
   }
 
   body {
@@ -23,7 +30,7 @@
   }
 
   .btn-primary {
-    @apply text-black bg-secondaryColor hover:opacity-75
+    @apply text-black bg-secondaryColor hover:opacity-75;
   }
 
   .no-transition {
@@ -37,9 +44,9 @@
   .section__title {
     @apply text-4xl font-oswald font-bold uppercase lg:text-5xl;
   }
-  
+
   .section__title {
-    @apply text-3xl
+    @apply text-3xl;
   }
 
   .card__title {
@@ -53,5 +60,4 @@
   .paragraph {
     @apply text-paragraphColor text-xs leading-5;
   }
-  
 }
