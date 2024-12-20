@@ -60,7 +60,7 @@ const Menu = () => {
                   key={button.value}
                   className={`btn hover:bg-secondaryColor dark:bg-darkColorLight dark:hover:bg-secondaryColor  ${
                     button.isActive
-                      ? "bg-secondaryColor"
+                      ? "bg-secondaryColor dark:bg-secondaryColor"
                       : "bg-primaryColorLight"
                   }`}
                   onClick={() => {
