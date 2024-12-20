@@ -35,7 +35,7 @@ const Nav = () => {
       <div>
         <a href="#" className="text-2xl uppercase font-oswald"> Bur<span className="text-secondaryColor">ger</span> </a>
       </div>
-      <div className={`absolute top-0 left-0 w-full py-14 bg-primaryColor border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto ${isOpen ? "block" : "hidden"}`} >
+      <div className={`absolute top-0 left-0 w-full py-14 bg-primaryColor dark:bg-darkColor border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto ${isOpen ? "block" : "hidden"}`} >
         <ul className="flex flex-col text-center gap-5 md:flex-row dark:bg-darkColor">
           {["home", "about", "menu", "review", "contact"].map((link, index) => (
             <li key={index}>
