@@ -32,7 +32,7 @@ const Beverages = () => {
               </p>
             </div>
 
-            <p className="text-secondaryColor">$42.00</p>
+            <p className="text-secondaryColor">$41.00</p>
           </div>
         </li>
         <li>
