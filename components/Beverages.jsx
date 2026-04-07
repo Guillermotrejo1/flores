@@ -52,7 +52,7 @@ const Beverages = () => {
 
           <div className="pt-5">
             <div className="mb-2">
-              <h4 className="card__title">Sweet Smoothie</h4>
+              <h4 className="card__title">Sweet Smoothie2</h4>
               <p className="paragraph">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </p>
