@@ -28,6 +28,8 @@ export default function AdminPage() {
   const [editingId, setEditingId] = useState(null);
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState({ message: "", type: "" });
+  const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState("");
 
   const showFeedback = (message, type = "success") => {
     setFeedback({ message, type });
@@ -57,13 +59,44 @@ export default function AdminPage() {
     e.preventDefault();
     setLoading(true);
 
-    const payload = {
-      ...form,
-      price: Number(form.price),
-      ...(editingId ? { id: editingId } : {}),
-    };
-
     try {
+      let imageKey = form.imageKey;
+
+      // If a new file was picked, upload it first
+      if (imageFile) {
+        const presignRes = await fetch("/api/admin/upload-url", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            filename: imageFile.name,
+            contentType: imageFile.type,
+          }),
+        });
+
+        if (!presignRes.ok) {
+          const d = await presignRes.json();
+          throw new Error(d.error || "Failed to get upload URL");
+        }
+
+        const { url, key } = await presignRes.json();
+
+        const uploadRes = await fetch(url, {
+          method: "PUT",
+          headers: { "Content-Type": imageFile.type },
+          body: imageFile,
+        });
+
+        if (!uploadRes.ok) throw new Error("Image upload to S3 failed");
+        imageKey = key;
+      }
+
+      const payload = {
+        ...form,
+        imageKey,
+        price: Number(form.price),
+        ...(editingId ? { id: editingId } : {}),
+      };
+
       const res = await fetch("/api/admin/items", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -81,6 +114,8 @@ export default function AdminPage() {
       showFeedback(editingId ? "Item updated!" : "Item added!");
       setForm(emptyForm);
       setEditingId(null);
+      setImageFile(null);
+      setImagePreview("");
       await loadItems();
     } catch (err) {
       showFeedback(err.message, "error");
@@ -98,6 +133,12 @@ export default function AdminPage() {
       description: item.description || "",
       imageKey: item.imageKey || "",
     });
+    setImageFile(null);
+    setImagePreview(
+      item.imageKey
+        ? `https://${process.env.NEXT_PUBLIC_S3_BUCKET}.s3.amazonaws.com/${item.imageKey}`
+        : ""
+    );
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -128,6 +169,8 @@ export default function AdminPage() {
   const handleCancel = () => {
     setForm(emptyForm);
     setEditingId(null);
+    setImageFile(null);
+    setImagePreview("");
   };
 
   return (
@@ -236,15 +279,32 @@ export default function AdminPage() {
 
             <div>
               <label className="block text-xs text-paragraphColor mb-1 uppercase">
-                Image Key (S3)
+                Image
               </label>
-              <input
-                name="imageKey"
-                value={form.imageKey}
-                onChange={handleChange}
-                placeholder="e.g. uploads/burger.png"
-                className="w-full bg-primaryColor border border-primaryColorLight rounded px-3 py-2 text-sm text-whiteColor placeholder-paragraphColor focus:outline-none focus:border-secondaryColor"
-              />
+              <div className="flex flex-col gap-2">
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (!file) return;
+                    setImageFile(file);
+                    setImagePreview(URL.createObjectURL(file));
+                  }}
+                  className="w-full text-sm text-paragraphColor file:mr-3 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:bg-secondaryColor file:text-blackColor hover:file:opacity-80 cursor-pointer"
+                />
+                {imagePreview && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={imagePreview}
+                    alt="Preview"
+                    className="h-24 w-24 object-cover rounded border border-primaryColorLight"
+                  />
+                )}
+                {!imagePreview && form.imageKey && (
+                  <p className="text-xs text-paragraphColor">Current key: {form.imageKey}</p>
+                )}
+              </div>
             </div>
 
             <div className="flex gap-3 pt-2">
