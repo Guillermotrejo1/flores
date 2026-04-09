@@ -1,4 +1,21 @@
 import { useCallback, useEffect, useState } from "react";
+import { createHmac } from "crypto";
+
+export async function getServerSideProps({ req }) {
+  const token = req.cookies?.admin_token;
+  const expected = createHmac(
+    "sha256",
+    process.env.ADMIN_SECRET || "fallback-secret"
+  )
+    .update(process.env.ADMIN_PASSWORD || "")
+    .digest("hex");
+
+  if (!token || token !== expected) {
+    return { redirect: { destination: "/admin-login", permanent: false } };
+  }
+
+  return { props: {} };
+}
 
 const CATEGORIES = ["food", "snack", "beverage"];
 
@@ -123,11 +140,19 @@ export default function AdminPage() {
       <div className="max-w-3xl mx-auto">
 
         {/* Header */}
-        <div className="mb-10">
-          <h1 className="font-oswald font-bold text-4xl uppercase text-secondaryColor">
-            Admin Panel
-          </h1>
-          <p className="text-paragraphColor mt-1">Manage menu items</p>
+        <div className="mb-10 flex items-start justify-between">
+          <div>
+            <h1 className="font-oswald font-bold text-4xl uppercase text-secondaryColor">
+              Admin Panel
+            </h1>
+            <p className="text-paragraphColor mt-1">Manage menu items</p>
+          </div>
+          <a
+            href="/api/admin/logout"
+            className="btn py-2 px-4 text-xs bg-primaryColor border border-paragraphColor text-paragraphColor hover:border-redColor hover:text-redColor"
+          >
+            Logout
+          </a>
         </div>
 
         {/* Feedback toast */}
