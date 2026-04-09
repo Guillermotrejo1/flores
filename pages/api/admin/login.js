@@ -1,11 +1,3 @@
-import { createHmac } from "crypto";
-
-export function makeAdminToken() {
-  return createHmac("sha256", process.env.ADMIN_SECRET || "fallback-secret")
-    .update(process.env.ADMIN_PASSWORD || "")
-    .digest("hex");
-}
-
 export default function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", ["POST"]);
@@ -18,7 +10,10 @@ export default function handler(req, res) {
     return res.status(401).json({ error: "Invalid password" });
   }
 
-  const token = makeAdminToken();
+  const token = process.env.ADMIN_TOKEN;
+  if (!token) {
+    return res.status(500).json({ error: "Server not configured" });
+  }
 
   res.setHeader(
     "Set-Cookie",

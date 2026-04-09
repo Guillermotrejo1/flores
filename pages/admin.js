@@ -1,16 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
-import { createHmac } from "crypto";
 
 export async function getServerSideProps({ req }) {
   const token = req.cookies?.admin_token;
-  const expected = createHmac(
-    "sha256",
-    process.env.ADMIN_SECRET || "fallback-secret"
-  )
-    .update(process.env.ADMIN_PASSWORD || "")
-    .digest("hex");
+  const expected = process.env.ADMIN_TOKEN;
 
-  if (!token || token !== expected) {
+  if (!expected || !token || token !== expected) {
     return { redirect: { destination: "/admin-login", permanent: false } };
   }
 
