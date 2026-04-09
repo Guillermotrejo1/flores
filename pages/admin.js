@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 export async function getServerSideProps({ req }) {
@@ -141,12 +142,12 @@ export default function AdminPage() {
             </h1>
             <p className="text-paragraphColor mt-1">Manage menu items</p>
           </div>
-          <a
+          <Link
             href="/api/admin/logout"
             className="btn py-2 px-4 text-xs bg-primaryColor border border-paragraphColor text-paragraphColor hover:border-redColor hover:text-redColor"
           >
             Logout
-          </a>
+          </Link>
         </div>
 
         {/* Feedback toast */}
