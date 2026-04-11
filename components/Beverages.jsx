@@ -28,11 +28,11 @@ const Beverages = () => {
             <div className="mb-2">
               <h4 className="card__title">Sweet Smoothie</h4>
               <p className="paragraph">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sweet and tasty Smoothie
               </p>
             </div>
 
-            <p className="text-secondaryColor">$41.00</p>
+            <p className="text-secondaryColor">$11.00</p>
           </div>
         </li>
         <li>
