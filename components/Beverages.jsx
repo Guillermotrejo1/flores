@@ -28,7 +28,7 @@ const Beverages = () => {
             <div className="mb-2">
               <h4 className="card__title">Sweet Smoothie</h4>
               <p className="paragraph">
-                Sweet and tasty Smoothie
+                Sweet and tasty Smoothies
               </p>
             </div>
 
